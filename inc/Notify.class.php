@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: thinfell
- * Date: 2016/9/1
- * Time: 23:14
+ *      This file is part of SuiNiPai.
+ *      (author) thinfell <thinfell@qq.com>
+ *		[SuiNiPai] Copyright (c) 2016 Qurui Inc. Code released under the MIT License.
+ *      www.suinipai.com
  */
+
 require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/alipay_notify.class.php");
 require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/weixin/Weixin.class.php");
 

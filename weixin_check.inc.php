@@ -1,9 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: thinfell
- * Date: 2016/9/2
- * Time: 23:38
+ *      This file is part of SuiNiPai.
+ *      (author) thinfell <thinfell@qq.com>
+ *		[SuiNiPai] Copyright (c) 2016 Qurui Inc. Code released under the MIT License.
+ *      www.suinipai.com
  */
 
 $timestamp = $_POST['timestamp'];
