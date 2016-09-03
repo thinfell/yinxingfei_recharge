@@ -20,8 +20,8 @@ class Weixin
         $out_trade_no = $para['out_trade_no'];
         $total_fee = $para['fee'];
         $body = $para['subject'];
-        $notify_url = $_G['siteurl'].'plugin.php?id=yinxingfei_recharge:notify_url';
-
+        $notify_url = $_G['siteurl'].'yinxingfei_recharge/notify_url';
+		
         $input_prepare = array(
             'appid' => $appid,
             'body' => $body,

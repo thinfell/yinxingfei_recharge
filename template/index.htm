@@ -10,7 +10,11 @@
 		<input type="hidden" name="formhash" value="<!--{FORMHASH}-->">
 		<input type="hidden" name="snpSubmit" value="true">
 		<input type="hidden" name="snpExtcredits" id="snp-extcredits" value="0">
-		<input type="hidden" id="snp-type" value="{$set['type']}">
+		<input type="hidden" id="snp-type" name="snp-type" value="{$set['type']}">
+		<input type="hidden" id="snp-signtype" name="snp-signtype" value="{$set['signtype']}">
+		<input type="hidden" id="snp-alipay" name="snp-alipay" value="{$set['alipay_open']}">
+		<input type="hidden" id="snp-weixin" name="snp-weixin" value="{$set['weixin_open']}">
+		<input type="hidden" id="snp-chinapay" name="snp-chinapay" value="0">
 		<div class="snp-box-main-warp">
 			<div class="snp-box-main-top">
 				<div class="snp-box-main-title-step1">

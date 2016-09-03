@@ -15,6 +15,10 @@ $extcredits = $_G['cache']['yinxingfei_recharge'];
 $extcredits_list = $_G['setting']['extcredits'];
 $set = $_G['cache']['plugin']['yinxingfei_recharge'];
 
+if(!$set['signtype'] &&  !$set['alipay_open'] && !$set['weixin_open']){
+    showmessage('管理员未开启任何支付模式，请联系管理员!');
+}
+
 if(submitcheck('snpSubmit', 1)) {
 	$snpExtcredits = intval($_POST['snpExtcredits']);
     $backUrl = 'plugin.php?id=yinxingfei_recharge:index';

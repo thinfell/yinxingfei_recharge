@@ -7,6 +7,7 @@
  * Time: 23:14
  */
 require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/alipay_notify.class.php");
+require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/weixin/Weixin.class.php");
 
 class Notify
 {
@@ -14,7 +15,7 @@ class Notify
     {
         //首先判断是数据源
         $judgeResult = $this->judge();
-
+		
         if($judgeResult){
             switch ($judgeResult) {
                 case 1 :
@@ -41,7 +42,7 @@ class Notify
     private function judge()
     {
         //通过来路参数是否含有特定参数 来判断
-        if(isset($_POST['code'])){
+        if(isset($_POST['optional'])){
             //免签约 异步
             return 4;
         }elseif (isset($_POST['notify_id'])){
@@ -72,14 +73,13 @@ class Notify
             $out_trade_no = $_POST['out_trade_no'];
             if ($_POST['trade_status'] == 'TRADE_SUCCESS') {
                 $data = DB::fetch_first("SELECT * FROM ".DB::table('a_yinxingfei_recharge_order')." WHERE id = '".$out_trade_no."'");
-                $fee = $data['fee'] / 100 ;
                 $optional = unserialize($data['optional']);
 
                 if($data['state'] != 1){
                     return "";
                 }
                 //验证金额
-                if($_POST['total_fee'] != $fee){
+                if($_POST['total_fee'] * 100 != $optional['fee']){
                     return "";
                 }
                 if($optional['type'] == 1){
@@ -93,7 +93,7 @@ class Notify
                 DB::query("UPDATE ".DB::table('a_yinxingfei_recharge_order')." SET state = 2, finish_time = '".$_G['timestamp']."' WHERE id= '".$out_trade_no."'", 'UNBUFFERED');
                 notification_add($data['uid'], 'credit', 'addfunds', array(
                     'orderid' => $out_trade_no,
-                    'price' => $fee,
+                    'price' => $optional['fee'] / 100,
                     'value' => $_G['setting']['extcredits'][$optional['snpExtcredits']]['title'].' '.$snpNum.' '.$_G['setting']['extcredits'][$optional['snpExtcredits']]['unit']
                 ), 1);
 
@@ -107,32 +107,36 @@ class Notify
     private function selfSign_alipay_return()
     {
         global $_G;
-        $out_trade_no = $_POST['out_trade_no'];
-        $fee =  $_POST['total_fee'] * 100;
+        $out_trade_no = $_GET['out_trade_no'];
+        $fee =  $_GET['total_fee'] * 100;
         header('Location: '.$_G['siteurl'].'plugin.php?id=yinxingfei_recharge:return_url&fee='.$fee.'&orderid='.$out_trade_no);
     }
 
     private function selfSign_weixin_notify()
     {
         global $_G;
+		
         $Weixin = new Weixin();
-
-        $xml = file_get_contents("php://input");
+        $xml = file_get_contents("php://input");		
         $notify = $Weixin->FromXml($xml);
         $key = $_G['cache']['plugin']['yinxingfei_recharge']['ec_wxpay_key'];
 
+		$myfile = fopen("log.txt", "w") or die("Unable to open file!");
+		$txt = json_encode($notify);
+		fwrite($myfile, $txt);
+		fclose($myfile);
+		
         if($notify['sign'] == $Weixin->MakeSign($notify,$key)){
             if($notify['result_code'] == 'SUCCESS') {
                 $out_trade_no = $notify['out_trade_no'];
                 $data = DB::fetch_first("SELECT * FROM ".DB::table('a_yinxingfei_recharge_order')." WHERE id = '".$out_trade_no."'");
-                $fee = $data['fee'] / 100 ;
                 $optional = unserialize($data['optional']);
 
                 if($data['state'] != 1){
                     return "";
                 }
                 //验证金额
-                if($notify['total_fee'] != $data['fee']){
+                if($notify['total_fee'] != $optional['fee']){
                     return "";
                 }
                 if($optional['type'] == 1){
@@ -146,7 +150,7 @@ class Notify
                 DB::query("UPDATE ".DB::table('a_yinxingfei_recharge_order')." SET state = 2, finish_time = '".$_G['timestamp']."' WHERE id= '".$out_trade_no."'", 'UNBUFFERED');
                 notification_add($data['uid'], 'credit', 'addfunds', array(
                     'orderid' => $out_trade_no,
-                    'price' => $fee,
+                    'price' => $optional['fee'] / 100,
                     'value' => $_G['setting']['extcredits'][$optional['snpExtcredits']]['title'].' '.$snpNum.' '.$_G['setting']['extcredits'][$optional['snpExtcredits']]['unit']
                 ), 1);
 
@@ -168,10 +172,10 @@ class Notify
     {
         global $_G;
 
-        if(!empty($_POST)) {
+        if(empty($_POST)) {
             return '';
         }
-
+		
         $timeStamp = $_POST['timeStamp'];
         $fee = intval($_POST['fee']);
         //$optional = $_POST['optional'];//原样返回参数
