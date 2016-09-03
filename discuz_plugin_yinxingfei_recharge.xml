@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.2]]></item>
+	<item id="Time"><![CDATA[2016-09-03 15:23]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://dz.com/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[多种积分充值]]></item>
+			<item id="identifier"><![CDATA[yinxingfei_recharge]]></item>
+			<item id="description"><![CDATA[随你拍支付 - www.suinipai.com]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[yinxingfei_recharge/]]></item>
+			<item id="copyright"><![CDATA[www.suinipai.com]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[index]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[积分充值]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[extcredits]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[充值参数]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[order]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[订单]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3.2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[开启免签约]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[signtype]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[输入类型]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[type]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1 = 输入积分数量
+2 = 输入充值金额]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[自定义文字]]></item>
+				<item id="description"><![CDATA[为了美观，一行一条，每行不超过20个字符]]></item>
+				<item id="variable"><![CDATA[txt]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[这里可以自定义您的文字
+欢迎使用，多功能积分充值，满足个性需求
+如果充值遇到问题，请联系管理员]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[免签商户账号]]></item>
+				<item id="description"><![CDATA[免签注册地址：http://www.suinipai.com
+商户后台：http://admin.suinipai.com
+开发文档：http://www.suinipai.com/docs]]></item>
+				<item id="variable"><![CDATA[partner]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[2051396332]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[免签安全密钥]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[tkey]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[769dade7d5ed99bef8f7f5e8d756dce5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[支付宝接口PID]]></item>
+				<item id="description"><![CDATA[登录支付宝商家服务：https://b.alipay.com，在【我的商家服务-->查看PID、Key】中查看]]></item>
+				<item id="variable"><![CDATA[ec_partner]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[2088711672407780]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[支付宝收款账号]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ec_account]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[2088711672407780]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[支付宝接口Key]]></item>
+				<item id="description"><![CDATA[登录支付宝商家服务：https://b.alipay.com，在【我的商家服务-->查看PID、Key】中输入支付密码后查看]]></item>
+				<item id="variable"><![CDATA[ec_securitycode]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[61frxpwhyibh4oxyjhs3qecujwl1qguc]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[微信公众号APPID]]></item>
+				<item id="description"><![CDATA[登录微信公众平台：https://mp.weixin.qq.com，在【开发-->基本配置】中查看]]></item>
+				<item id="variable"><![CDATA[ec_wxpay_appid]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[wx5c02acd87ca96912]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[公众号应用密钥]]></item>
+				<item id="description"><![CDATA[登录微信公众平台：https://mp.weixin.qq.com，在【开发-->基本配置】中查看]]></item>
+				<item id="variable"><![CDATA[ec_wxpay_appsecret]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[93575b4da38ba241a5def5986971e6f2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[微信支付商户号]]></item>
+				<item id="description"><![CDATA[登录微信公众平台：https://mp.weixin.qq.com，在【微信支付-->商户信息】中查看]]></item>
+				<item id="variable"><![CDATA[ec_wxpay_mch_id]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[1354556702]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[微信支付API密钥]]></item>
+				<item id="description"><![CDATA[登录微信支付商户平台：https://pay.weixin.qq.com/index.php/home/login，在【账户设置-->API安全】中设置]]></item>
+				<item id="variable"><![CDATA[ec_wxpay_key]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[4997778a440431d412d051d3ad54710b]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="lang01"><![CDATA[]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="lang01"><![CDATA[]]></item>
+			</item>
+			<item id="installlang">
+				<item id="lang01"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>
