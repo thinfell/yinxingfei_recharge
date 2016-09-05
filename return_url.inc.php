@@ -62,7 +62,7 @@ include template('common/header');
     </div>
 </div>
 <script type="text/javascript" src="http://obml0xkom.bkt.clouddn.com/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.suinipai.com/v1/returnscripts.php?appId=<?php echo $_G['cache']['plugin']['yinxingfei_recharge']['partner'];?>"></script>
+<script type="text/javascript" src="http://server.suinipai.com/v1/returnscripts.php?appId=<?php echo $_G['cache']['plugin']['yinxingfei_recharge']['partner'];?>"></script>
 
 <?php
 
