@@ -11,9 +11,9 @@ if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 	exit('Access Denied');
 }
 $stater = array(
-	1 => '<font color=red>未支付</font>',
-	2 => '<font color=green>支付成功</font>',
-	3 => '<font color=gray>取消</font>',
+	1 => '<font color=red>'.lang('plugin/yinxingfei_recharge', 'lang18').'</font>',
+	2 => '<font color=green>'.lang('plugin/yinxingfei_recharge', 'lang19').'</font>',
+	3 => '<font color=gray>'.lang('plugin/yinxingfei_recharge', 'lang31').'</font>',
 );
 
 if($_GET['supplement'] == 'yes'){
@@ -38,11 +38,11 @@ if($_GET['supplement'] == 'yes'){
 			'value' => $extcredits[$optional['snpExtcredits']]['title'].' '.$snpNum.' '.$extcredits[$optional['snpExtcredits']]['unit']
 		), 1);
 	}
-	cpmsg('补单成功', 'action=plugins&operation=config&identifier=yinxingfei_recharge&pmod=order', 'succeed');
+	cpmsg(lang('plugin/yinxingfei_recharge', 'lang20'), 'action=plugins&operation=config&identifier=yinxingfei_recharge&pmod=order', 'succeed');
 }
 
 showformheader('plugins&operation=config&identifier=yinxingfei_recharge&pmod=order');
-showtableheader('积分充值记录','','','99');
+showtableheader(lang('plugin/yinxingfei_recharge', 'lang21'),'','','99');
 $limit = 50;
 $num = DB::result_first("SELECT COUNT(*) FROM ".DB::table('a_yinxingfei_recharge_order')." ");
 $page = max(1, intval($_GET['page']));
@@ -50,7 +50,7 @@ $start_limit = ($page - 1) * $limit;
 $url = "admin.php?action=plugins&operation=config&identifier=yinxingfei_recharge&pmod=order";
 $multipage = multi($num, $limit, $page, $url);
 $query = DB::query("SELECT * FROM ".DB::table('a_yinxingfei_recharge_order')." ORDER BY start_time DESC LIMIT ".$start_limit." ,".$limit."");
-showsubtitle(array('','订单号','用户名','订单详情','支付金额','提交时间','完结时间','状态','操作'));
+showsubtitle(array('',lang('plugin/yinxingfei_recharge', 'lang22'),lang('plugin/yinxingfei_recharge', 'lang06'),lang('plugin/yinxingfei_recharge', 'lang23'),lang('plugin/yinxingfei_recharge', 'lang24'),lang('plugin/yinxingfei_recharge', 'lang25'),lang('plugin/yinxingfei_recharge', 'lang26'),lang('plugin/yinxingfei_recharge', 'lang27'),lang('plugin/yinxingfei_recharge', 'lang28')));
 while ($result = DB::fetch($query)){
 	$optional = unserialize($result['optional']);
 	showtablerow('','', array(
@@ -62,7 +62,7 @@ while ($result = DB::fetch($query)){
 		date("Y-m-d H:i:s",$result['start_time']),
 		$result['finish_time'] ? date("Y-m-d H:i:s",$result['finish_time']) : '-',
 		$stater[$result['state']],
-		$result['state'] == 1 ? '<a href="admin.php?action=plugins&operation=config&identifier=yinxingfei_recharge&pmod=order&supplement=yes&ordid='.$result['id'].'">补单</a>':'-'
+		$result['state'] == 1 ? '<a href="admin.php?action=plugins&operation=config&identifier=yinxingfei_recharge&pmod=order&supplement=yes&ordid='.$result['id'].'">'.lang('plugin/yinxingfei_recharge', 'lang29').'</a>':'-'
 	));
 }
 showtablerow('', array('colspan="99"'), array($multipage));

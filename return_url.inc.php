@@ -13,7 +13,7 @@ if(!defined('IN_DISCUZ')) {
 if(!$_G['uid']) {
 	showmessage('not_loggedin', NULL, array(), array('login' => 1));
 }
-$navtitle = '支付成功';
+$navtitle = lang('plugin/yinxingfei_recharge', 'lang19');
 $orderid = $_GET['orderid'];
 $data = DB::fetch_first("SELECT * FROM ".DB::table('a_yinxingfei_recharge_order')." WHERE id = '".$orderid."'");
 $optional = unserialize($data['optional']);
@@ -33,7 +33,7 @@ include template('common/header');
 <header class="header">
     <div class="nav">
         <a href="javascript:;" onclick="history.go(-1)" class="z"><img src="<?php echo STATICURL;?>image/mobile/images/icon_back.png" /></a>
-		<span>支付成功</span>
+		<span><?php echo lang('plugin/yinxingfei_recharge', 'lang19');?></span>
     </div>
 </header>
 <?php };?>
@@ -44,20 +44,20 @@ include template('common/header');
             <div class="thinfellpay-box-note">
                 <div class="thinfellpay-box-result">
 					<img src="http://obml0xkom.bkt.clouddn.com/success.png" class="thinfellpay-box-result-success" />
-					<div style="padding: 20px 0px 10px 0px;">支付成功</div>
-					<div style="font-size:30px;height:36px;line-height:36px;"><?php echo number_format(($_GET['fee']/100), 2, '.', '');?>元</div>
-					<div style="font-size: 14px;color: #888;padding-top:6px;">订单号：<?php echo $_GET['orderid'];?></div>
+					<div style="padding: 20px 0px 10px 0px;"><?php echo lang('plugin/yinxingfei_recharge', 'lang19');?></div>
+					<div style="font-size:30px;height:36px;line-height:36px;"><?php echo number_format(($_GET['fee']/100), 2, '.', '');?><?php echo lang('plugin/yinxingfei_recharge', 'lang09');?></div>
+					<div style="font-size: 14px;color: #888;padding-top:6px;"><?php echo lang('plugin/yinxingfei_recharge', 'lang30');?><?php echo $_GET['orderid'];?></div>
 				</div>
             </div>
         </div>
         <div>
-            <a href="home.php?mod=spacecp&ac=credit&showcredit=1" class="thinfellpay-box-pay-btn">查看积分</a>
+            <a href="home.php?mod=spacecp&ac=credit&showcredit=1" class="thinfellpay-box-pay-btn"><?php echo lang('plugin/yinxingfei_recharge', 'lang32');?></a>
 		</div>
         <div class="thinfellpay-box-pay-notice-main">
-            <a href="javascript:;" onclick="alert('联系管理员');" class="thinfellpay-box-pay-notice">支付成功，积分没到账？</a>
+            <a href="plugin.php?id=yinxingfei_recharge:index" class="thinfellpay-box-pay-notice"><?php echo lang('plugin/yinxingfei_recharge', 'lang33');?></a>
 		</div>
         <div>
-            <a href="./" class="thinfellpay-box-pay-cancel">返回首页</a>
+            <a href="./" class="thinfellpay-box-pay-cancel"><?php echo lang('plugin/yinxingfei_recharge', 'lang34');?></a>
 		</div>
     </div>
 </div>

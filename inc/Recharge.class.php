@@ -6,9 +6,13 @@
  *		[SuiNiPai] Copyright (c) 2016 Qurui Inc. Code released under the MIT License.
  *      www.suinipai.com
  */
- 
-require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/alipay_submit.class.php");
-require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/weixin/Weixin.class.php");
+
+if(!defined('IN_DISCUZ')) {
+    exit('Access Denied');
+}
+
+require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/Alipay.class.php");
+require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/weixin/WeiXin.class.php");
 
 class Recharge {
 
@@ -44,7 +48,7 @@ class Recharge {
                 default :
                     $result = [
                         'code' => 0,
-                        'message' => '参数signtype不正确',
+                        'message' => 'signtype error',
                     ];
             }
         }else{
@@ -60,15 +64,15 @@ class Recharge {
     {
         //基础参数验证
         if(!array_key_exists('out_trade_no', $this->para) || !isset($this->para['out_trade_no'])) {
-            $result = '缺少参数out_trade_no';
+            $result = 'missing out_trade_no';
         }elseif (!array_key_exists('fee', $this->para) || !isset($this->para['fee'])){
-            $result = '缺少参数fee';
+            $result = 'missing fee';
         }elseif (intval($this->para['fee']) < 1 ){
-            $result = '参数fee必须大于0';
+            $result = 'fee must be greater than 0';
         }elseif (!array_key_exists('subject', $this->para) || !isset($this->para['subject'])){
-            $result = '缺少参数subject';
+            $result = 'missing subject';
         }elseif (!array_key_exists('paytype', $this->para) || !isset($this->para['paytype'])){
-            $result = '缺少参数paytype';
+            $result = 'missing paytype';
         }else{
             $result = 'success';
         }
@@ -87,7 +91,7 @@ class Recharge {
             default :
                 $result = [
                     'code' => 0,
-                    'message' => '参数PayType不正确，不支持该类型的支付',
+                    'message' => 'PayType error',
                 ];
         }
         return $result;
@@ -250,7 +254,6 @@ EOF;
         $alipay_config['return_url'] = $_G['siteurl'].$this->back_notify_url;//同步通讯到同一个地址做判断
         $alipay_config['sign_type']    = strtoupper('MD5');
         $alipay_config['input_charset']= strtolower('utf-8');
-        $alipay_config['cacert']    = getcwd().'\\..\\alipay\\cacert.pem';
         $alipay_config['transport']    = 'http';
         $alipay_config['payment_type'] = "1";
         if($user_agent != 'pc'){
@@ -282,8 +285,8 @@ EOF;
             "_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
         );
 
-        $alipaySubmit = new AlipaySubmit($alipay_config);
-        $html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
+        $alipaySubmit = new Alipay($alipay_config);
+        $html_text = $alipaySubmit->buildRequestForm($parameter);
         $return = [
             'code' => 200,
             'user_agent' => $user_agent,
