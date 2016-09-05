@@ -2,7 +2,7 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.2]]></item>
-	<item id="Time"><![CDATA[2016-09-05 17:20]]></item>
+	<item id="Time"><![CDATA[2016-09-05 17:34]]></item>
 	<item id="From"><![CDATA[Discuz! Board (http://dz.com/)]]></item>
 	<item id="Data">
 		<item id="plugin">
@@ -14,7 +14,7 @@
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[yinxingfei_recharge/]]></item>
 			<item id="copyright"><![CDATA[www.suinipai.com]]></item>
-			<item id="version"><![CDATA[1.0]]></item>
+			<item id="version"><![CDATA[1.1]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[index]]></item>
@@ -216,6 +216,15 @@
 				<item id="lang32"><![CDATA[查看积分]]></item>
 				<item id="lang33"><![CDATA[支付成功，还想继续充值？]]></item>
 				<item id="lang34"><![CDATA[返回首页]]></item>
+				<item id="lang35"><![CDATA[充值比例]]></item>
+				<item id="lang36"><![CDATA[积分名称]]></item>
+				<item id="lang37"><![CDATA[是否开启充值]]></item>
+				<item id="lang38"><![CDATA[1元=？积分]]></item>
+				<item id="lang39"><![CDATA[单次最少充值]]></item>
+				<item id="lang40"><![CDATA[单次最多充值]]></item>
+				<item id="lang41"><![CDATA[数量]]></item>
+				<item id="lang42"><![CDATA[该积分未启用]]></item>
+				<item id="lang43"><![CDATA[设置保存成功]]></item>
 			</item>
 		</item>
 		<item id="installfile"><![CDATA[install.php]]></item>
