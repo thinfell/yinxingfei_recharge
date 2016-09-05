@@ -1,29 +1,38 @@
-<!--{template common/header}-->
+<?php
 
-
-<!-- /**
+/**
  *      This file is part of SuiNiPai.
  *      (author) thinfell <thinfell@qq.com>
  *		[SuiNiPai] Copyright (c) 2016 Qurui Inc. Code released under the MIT License.
  *      www.suinipai.com
- */ -->
+ */
 
+	include  template("common/header");
+?>
 
 <div id="pt" class="bm cl">
 	<div class="z">
-		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php">{$_G[setting][navs][2][navname]}</a><em>&raquo;</em><!--{$navtitle}-->
+		<a href="./" class="nvhm" title="<?php echo lang('homepage');?>">
+			<?php echo $_G[setting][bbname];?>
+		</a>
+		<em>&raquo;</em>
+		<a href="forum.php">
+			<?php echo $_G[setting][navs][2][navname];?>
+		</a>
+		<em>&raquo;</em>
+			<?php echo $navtitle;?>
 	</div>
 </div>
-<link href="source/plugin/yinxingfei_recharge/assets/css/main.css?{VERHASH}" rel="stylesheet">
+<link href="source/plugin/yinxingfei_recharge/assets/css/main.css?<?php echo VERHASH;?>" rel="stylesheet">
 <div class="snp-box-main">
 	<form method="post" name="pay_form" id="pay_form" autocomplete="off" onsubmit="credit_submit();return false;">
-		<input type="hidden" name="formhash" value="<!--{FORMHASH}-->">
+		<input type="hidden" name="formhash" value="<?php echo FORMHASH;?>">
 		<input type="hidden" name="snpSubmit" value="true">
 		<input type="hidden" name="snpExtcredits" id="snp-extcredits" value="0">
-		<input type="hidden" id="snp-type" name="snp-type" value="{$set['type']}">
-		<input type="hidden" id="snp-signtype" name="snp-signtype" value="{$set['signtype']}">
-		<input type="hidden" id="snp-alipay" name="snp-alipay" value="{$set['alipay_open']}">
-		<input type="hidden" id="snp-weixin" name="snp-weixin" value="{$set['weixin_open']}">
+		<input type="hidden" id="snp-type" name="snp-type" value="<?php echo $set['type'];?>">
+		<input type="hidden" id="snp-signtype" name="snp-signtype" value="<?php echo $set['signtype'];?>">
+		<input type="hidden" id="snp-alipay" name="snp-alipay" value="<?php echo $set['alipay_open'];?>">
+		<input type="hidden" id="snp-weixin" name="snp-weixin" value="<?php echo $set['weixin_open'];?>">
 		<input type="hidden" id="snp-chinapay" name="snp-chinapay" value="0">
 		<div class="snp-box-main-warp">
 			<div class="snp-box-main-top">
@@ -46,38 +55,40 @@
 					<span>积分到账</span>
 				</div>
 			</div>
-			<div class="tpay-notice" {if $extcreditsCount == 1}style="padding-bottom:10px;"{/if}>
+			<div class="tpay-notice"<?php if($extcreditsCount == 1){?>style="padding-bottom:10px;"<?php };?>>
 				<ul>
-					{eval}
+					<?php
 						$set_txt_array = explode("\n", $set['txt']);
-					{/eval}
-					{loop $set_txt_array $key $value}
+						foreach ($set_txt_array as $key => $value){
+					?>
 						<li>
-							{eval echo trim($value);}
+							<?php echo trim($value);?>
 						</li>
-					{/loop}
+					<?php
+						}
+					?>
 				</ul>
 			</div>
 			<div class="snp-box-main-input">
-				<div class="snp-select {if $extcreditsCount == 1}snp-only-one{/if}" name="snp-select">
-					{if $extcreditsCount == 1}
-						<span>温馨提示：{$extcredits[$onlyone]['ratio']}{$extcredits_list[$onlyone]['title']} / 元</span>
+				<div class="snp-select <?php if($extcreditsCount == 1){ ?>snp-only-one<?php }?>" name="snp-select">
+					<?php if($extcreditsCount == 1){?>
+						<span>温馨提示：<?php echo $extcredits[$onlyone]['ratio'].$extcredits_list[$onlyone]['title'];?> / 元</span>
 						<ul>
-							{$li_html}
+							<?php echo $li_html;?>
 						</ul>
-					{else}
+					<?php }else{?>
 						<a href="javascript:;" class="snp-select-a"><font color=#a9a9a9>选择充值积分</font></a>
 						<ul>
-							{$li_html}
+							<?php echo $li_html;?>
 						</ul>
-					{/if}
+					<?php }?>
 				</div>
 				<div class="snp-form-group">
-					{if $set['type'] == 1}
+					<?php if ($set['type'] == 1){?>
 						<input type="text" name="snpNum" class="snp-input" placeholder="输入充值积分数量" />
-					{else}
+					<?php }else{?>
 						<input type="text" name="snpFee" class="snp-input" placeholder="输入充值金额" />
-					{/if}
+					<?php }?>
 				</div>
 				<div>
 					<p class="spn-help-block" id="snp-tip" style="display:none;">等待计算</p>
@@ -92,9 +103,9 @@
 </div>
 <script src="source/plugin/yinxingfei_recharge/assets/js/jquery.min.js"></script>
 <script src="source/plugin/yinxingfei_recharge/assets/js/jquery.placeholder.min.js"></script>
-<script src="source/plugin/yinxingfei_recharge/assets/js/main.js?{VERHASH}"></script>
+<script src="source/plugin/yinxingfei_recharge/assets/js/main.js?<?php echo VERHASH;?>"></script>
 
-{if $extcreditsCount == 1}
+<?php if ($extcreditsCount == 1){?>
 <script type="text/javascript">
 	var jq = jQuery.noConflict();
 
@@ -111,7 +122,10 @@
 	jq('#snp-extcredits').val(extcreditsValue);
 
 </script>
-{/if}
+<?php }?>
 
-<script type="text/javascript" src="http://server.suinipai.com/v1/returnscripts.php?appId={$_G['cache']['plugin']['yinxingfei_recharge']['partner']}"></script>
-<!--{template common/footer}-->
+<script type="text/javascript" src="http://server.suinipai.com/v1/returnscripts.php?appId=<?php echo $_G['cache']['plugin']['yinxingfei_recharge']['partner'];?>"></script>
+
+<?php
+	include  template("common/footer");
+?>

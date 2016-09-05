@@ -124,7 +124,6 @@ if(submitcheck('snpSubmit', 1)) {
         }
     }
     include DISCUZ_ROOT."source/plugin/yinxingfei_recharge/template/index.php";
-    //(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/alipay_notify.class.php");
 }
 
 function microtime_float(){
