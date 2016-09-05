@@ -116,9 +116,10 @@ if(submitcheck('snpSubmit', 1)) {
     $li_html = '';
     $extcreditsCount = 0;
     $onlyone = '';
+    $snplang09 = lang('plugin/yinxingfei_recharge', 'lang09');
     for($i = 1; $i <= 8; $i++) {
         if($extcredits[$i]['open']){
-            $li_html .= "<li extcredits-value=\"{$i}\" ratio-value=\"{$extcredits[$i]['ratio']}\" least-value=\"{$extcredits[$i]['least']}\" most-value=\"{$extcredits[$i]['most']}\" title-value=\"{$extcredits_list[$i]['title']}\">{$extcredits[$i]['ratio']}{$extcredits_list[$i]['title']} / {lang('plugin/yinxingfei_recharge', 'lang09')}</li>";
+            $li_html .= "<li extcredits-value=\"{$i}\" ratio-value=\"{$extcredits[$i]['ratio']}\" least-value=\"{$extcredits[$i]['least']}\" most-value=\"{$extcredits[$i]['most']}\" title-value=\"{$extcredits_list[$i]['title']}\">{$extcredits[$i]['ratio']}{$extcredits_list[$i]['title']} / {$snplang09}</li>";
             $extcreditsCount++;
             $onlyone = $i;
         }
