@@ -7,9 +7,11 @@
  *      www.suinipai.com
  */
 
-require '../../../class/class_core.php';
+require '../../class/class_core.php';
 $discuz = C::app();
 $discuz->init();
+runhooks();
+
 loadcache('plugin');
 
 require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/inc/Notify.class.php");
