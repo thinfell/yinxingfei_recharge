@@ -12,7 +12,18 @@ if(!defined('IN_DISCUZ')) {
 }
 
 	include  template("common/header");
+$isMb = checkmobile();
+
+include template('common/header');
 ?>
+<?php if($isMb == 2){?>
+	<header class="header">
+		<div class="nav">
+			<a href="javascript:;" onclick="history.go(-1)" class="z"><img src="<?php echo STATICURL;?>image/mobile/images/icon_back.png" /></a>
+			<span><?php echo lang('plugin/yinxingfei_recharge', 'lang19');?></span>
+		</div>
+	</header>
+<?php }else{?>
 
 <div id="pt" class="bm cl">
 	<div class="z">
@@ -27,6 +38,7 @@ if(!defined('IN_DISCUZ')) {
 			<?php echo $navtitle;?>
 	</div>
 </div>
+<?php } ?>
 <link href="source/plugin/yinxingfei_recharge/assets/css/main.css?<?php echo VERHASH;?>" rel="stylesheet">
 <div class="snp-box-main">
 	<form method="post" name="pay_form" id="pay_form" autocomplete="off" onsubmit="credit_submit();return false;">
