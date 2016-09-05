@@ -8,3 +8,5 @@ This file is part of SuiNiPai.
 [SuiNiPai] Copyright (c) 2016 Qurui Inc. Code released under the MIT License.
 
 www.suinipai.com
+
+公司
