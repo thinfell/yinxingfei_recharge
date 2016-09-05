@@ -2,8 +2,8 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.2]]></item>
-	<item id="Time"><![CDATA[2016-09-05 17:34]]></item>
-	<item id="From"><![CDATA[Discuz! Board (http://dz.com/)]]></item>
+	<item id="Time"><![CDATA[2016-09-05 22:41]]></item>
+	<item id="From"><![CDATA[thinfellPay (http://pay.thinfell.com/)]]></item>
 	<item id="Data">
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
@@ -14,7 +14,7 @@
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[yinxingfei_recharge/]]></item>
 			<item id="copyright"><![CDATA[www.suinipai.com]]></item>
-			<item id="version"><![CDATA[1.1]]></item>
+			<item id="version"><![CDATA[1.2]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[index]]></item>
@@ -86,7 +86,7 @@
 				<item id="description"><![CDATA[〓〓〓〓〓〓〓 免签约设置Start，这是分割线  〓〓〓〓〓〓〓]]></item>
 				<item id="variable"><![CDATA[signtype]]></item>
 				<item id="type"><![CDATA[radio]]></item>
-				<item id="value"><![CDATA[0]]></item>
+				<item id="value"><![CDATA[1]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="3">
@@ -113,7 +113,7 @@
 				<item id="description"><![CDATA[〓〓〓〓〓〓〓 支付宝设置Start，这是分割线  〓〓〓〓〓〓〓]]></item>
 				<item id="variable"><![CDATA[alipay_open]]></item>
 				<item id="type"><![CDATA[radio]]></item>
-				<item id="value"><![CDATA[1]]></item>
+				<item id="value"><![CDATA[0]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="6">
@@ -122,7 +122,7 @@
 				<item id="description"><![CDATA[登录支付宝商家服务：https://b.alipay.com，在【我的商家服务-->查看PID、Key】中查看]]></item>
 				<item id="variable"><![CDATA[ec_partner]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[2088711672407780]]></item>
+				<item id="value"><![CDATA[]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="7">
@@ -131,7 +131,7 @@
 				<item id="description"><![CDATA[登录支付宝商家服务：https://b.alipay.com，在【我的商家服务-->查看PID、Key】中输入支付密码后查看]]></item>
 				<item id="variable"><![CDATA[ec_securitycode]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[61frxpwhyibh4oxyjhs3qecujwl1qguc]]></item>
+				<item id="value"><![CDATA[]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="8">
@@ -140,7 +140,7 @@
 				<item id="description"><![CDATA[〓〓〓〓〓〓〓 微信支付设置Start，这是分割线  〓〓〓〓〓〓〓]]></item>
 				<item id="variable"><![CDATA[weixin_open]]></item>
 				<item id="type"><![CDATA[radio]]></item>
-				<item id="value"><![CDATA[1]]></item>
+				<item id="value"><![CDATA[0]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="9">
@@ -149,7 +149,7 @@
 				<item id="description"><![CDATA[登录微信公众平台：https://mp.weixin.qq.com，在【开发-->基本配置】中查看]]></item>
 				<item id="variable"><![CDATA[ec_wxpay_appid]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[wx5c02acd87ca96912]]></item>
+				<item id="value"><![CDATA[]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="10">
@@ -158,7 +158,7 @@
 				<item id="description"><![CDATA[登录微信公众平台：https://mp.weixin.qq.com，在【开发-->基本配置】中查看]]></item>
 				<item id="variable"><![CDATA[ec_wxpay_appsecret]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[93575b4da38ba241a5def5986971e6f2]]></item>
+				<item id="value"><![CDATA[]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="11">
@@ -167,7 +167,7 @@
 				<item id="description"><![CDATA[登录微信公众平台：https://mp.weixin.qq.com，在【微信支付-->商户信息】中查看]]></item>
 				<item id="variable"><![CDATA[ec_wxpay_mch_id]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[1354556702]]></item>
+				<item id="value"><![CDATA[]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="12">
@@ -176,7 +176,7 @@
 				<item id="description"><![CDATA[登录微信支付商户平台：https://pay.weixin.qq.com/index.php/home/login，在【账户设置-->API安全】中设置]]></item>
 				<item id="variable"><![CDATA[ec_wxpay_key]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[4997778a440431d412d051d3ad54710b]]></item>
+				<item id="value"><![CDATA[]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 		</item>
