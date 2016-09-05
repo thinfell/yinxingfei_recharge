@@ -107,16 +107,21 @@ class Notify
     private function selfSign_alipay_return()
     {
         global $_G;
+		
         $out_trade_no = $_GET['out_trade_no'];
         $fee =  $_GET['total_fee'] * 100;
-        header('Location: '.$_G['siteurl'].'plugin.php?id=yinxingfei_recharge:return_url&fee='.$fee.'&orderid='.$out_trade_no);
+		
+		$Url = $_G['siteurl'];
+		$siteurl_all = parse_url($Url);
+		$siteurl = $siteurl_all['host'];
+        header('Location: http://'.$siteurl.'/plugin.php?id=yinxingfei_recharge:return_url&fee='.$fee.'&orderid='.$out_trade_no);		
     }
 
     private function selfSign_weixin_notify()
     {
         global $_G;
 		
-        $Weixin = new Weixin();
+        $Weixin = new WeiXin();
         $xml = file_get_contents("php://input");		
         $notify = $Weixin->FromXml($xml);
         $key = $_G['cache']['plugin']['yinxingfei_recharge']['ec_wxpay_key'];
