@@ -184,7 +184,7 @@ EOF;
     {
         global $_G;
 
-        $Weixin = new Weixin();
+        $Weixin = new WeiXin();
         $result_data = $Weixin->run($this->para);
         if($result_data['code'] == 200) {
             $jsTimestamp = $this->microtime_float();

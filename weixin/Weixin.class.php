@@ -7,7 +7,7 @@
  *      www.suinipai.com
  */
 
-class Weixin
+class WeiXin
 {
     public function run($para)
     {
