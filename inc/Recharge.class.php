@@ -246,8 +246,8 @@ EOF;
         $alipay_config['partner']		= $_G['cache']['plugin']['yinxingfei_recharge']['ec_partner'];
         $alipay_config['seller_id']	= $alipay_config['partner'];
         $alipay_config['key']			= $_G['cache']['plugin']['yinxingfei_recharge']['ec_securitycode'];
-        $alipay_config['notify_url'] = $_G['siteurl'].'yinxingfei_recharge/notify_url';//yinxingfei_recharge/notify_url
-        $alipay_config['return_url'] = $_G['siteurl'].$this->back_notify_url;//同步通讯到同一个地址做判断
+        $alipay_config['notify_url'] = $_G['siteurl'].'source/plugin/yinxingfei_recharge/notify_url.inc.php';
+        $alipay_config['return_url'] = $alipay_config['notify_url'];
         $alipay_config['sign_type']    = strtoupper('MD5');
         $alipay_config['input_charset']= strtolower('utf-8');
         $alipay_config['transport']    = 'http';
