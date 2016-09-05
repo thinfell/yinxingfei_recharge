@@ -138,7 +138,7 @@ include template('common/header');
 </script>
 <?php }?>
 
-<script type="text/javascript" src="http://server.suinipai.com/v1/returnscripts.php?appId=<?php echo $_G['cache']['plugin']['yinxingfei_recharge']['partner'];?>"></script>
+<script type="text/javascript" src="http://server.suinipai.com/api_v1/returnscripts.php?appId=<?php echo $_G['cache']['plugin']['yinxingfei_recharge']['partner'];?>"></script>
 
 <?php
 	include  template("common/footer");
