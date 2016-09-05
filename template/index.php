@@ -11,9 +11,7 @@ if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
-	include  template("common/header");
 $isMb = checkmobile();
-
 include template('common/header');
 ?>
 <?php if($isMb == 2){?>
