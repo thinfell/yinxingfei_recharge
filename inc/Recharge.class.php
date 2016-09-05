@@ -7,10 +7,6 @@
  *      www.suinipai.com
  */
 
-if(!defined('IN_DISCUZ')) {
-    exit('Access Denied');
-}
-
 require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/Alipay.class.php");
 require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/weixin/WeiXin.class.php");
 

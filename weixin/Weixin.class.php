@@ -7,10 +7,6 @@
  *      www.suinipai.com
  */
 
-if(!defined('IN_DISCUZ')) {
-    exit('Access Denied');
-}
-
 class Weixin
 {
     public function run($para)

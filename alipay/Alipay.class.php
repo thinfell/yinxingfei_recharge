@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2016/9/5
- * Time: 15:13
+ *      This file is part of SuiNiPai.
+ *      (author) thinfell <thinfell@qq.com>
+ *		[SuiNiPai] Copyright (c) 2016 Qurui Inc. Code released under the MIT License.
+ *      www.suinipai.com
  */
+
 class Alipay
 {
     private $alipay_config;
