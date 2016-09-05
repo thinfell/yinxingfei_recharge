@@ -102,7 +102,7 @@ class Recharge {
             'subject' => $this->para['subject'],
             'fee' => $this->para['fee'],
             'return_url' => urlencode($_G['siteurl'].$this->back_return_url),
-            'notify_url' => urlencode($_G['siteurl'].$this->back_notify_url),
+            'notify_url' => urlencode($_G['siteurl'].'source/plugin/yinxingfei_recharge/notify_url.inc.php'),
             'paytype' => $this->para['paytype'],
             'optional' => serialize($this->para['optional']),
         );
