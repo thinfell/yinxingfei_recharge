@@ -15,7 +15,7 @@ if(!$_G['uid']) {
 	showmessage('not_loggedin', NULL, array(), array('login' => 1));
 }
 
-$navtitle = '积分充值';
+$navtitle = lang('plugin/yinxingfei_recharge', 'lang01');
 
 loadcache('yinxingfei_recharge');
 $extcredits = $_G['cache']['yinxingfei_recharge'];
@@ -23,14 +23,14 @@ $extcredits_list = $_G['setting']['extcredits'];
 $set = $_G['cache']['plugin']['yinxingfei_recharge'];
 
 if(!$set['signtype'] &&  !$set['alipay_open'] && !$set['weixin_open']){
-    showmessage('管理员未开启任何支付模式，请联系管理员!');
+    showmessage(lang('plugin/yinxingfei_recharge', 'lang02'));
 }
 
 if(submitcheck('snpSubmit', 1)) {
 	$snpExtcredits = intval($_POST['snpExtcredits']);
     $backUrl = 'plugin.php?id=yinxingfei_recharge:index';
 	if($snpExtcredits < 1 ){
-		showmessage('选择充值积分', $backUrl);
+		showmessage(lang('plugin/yinxingfei_recharge', 'lang03'), $backUrl);
 	}
 	if($set['type'] == 1){
 		$snpNum = intval($_POST['snpNum']);
@@ -41,10 +41,10 @@ if(submitcheck('snpSubmit', 1)) {
         $creditTitle = $extcredits_list[$snpExtcredits]['title'];
 
         if($snpNum < $snpLeast){
-			showmessage('每次最少充值'.$snpLeast.$creditTitle, $backUrl);
+			showmessage(lang('plugin/yinxingfei_recharge', 'lang04').$snpLeast.$creditTitle, $backUrl);
 		}
 		if($snpNum > $snpMost){
-			showmessage('每次最多充值'.$snpMost.$creditTitle, $backUrl);
+			showmessage(lang('plugin/yinxingfei_recharge', 'lang05').$snpMost.$creditTitle, $backUrl);
 		}
 		$totalFee = $snpNum / $snpRatio;
 		if($totalFee < 0.01){
@@ -53,18 +53,18 @@ if(submitcheck('snpSubmit', 1)) {
 		$totalFee = number_format($totalFee, 2, '.', '');
 		$fee = $totalFee*100;
 		$snpFee = $totalFee;
-		$subject = '用户'.$_G['username'].'积分充值-'.$snpNum.$creditTitle;
+		$subject = lang('plugin/yinxingfei_recharge', 'lang06').$_G['username'].lang('plugin/yinxingfei_recharge', 'lang01').'-'.$snpNum.$creditTitle;
 	}else{
 		$snpFee = intval($_POST['snpFee']);
 		if($snpFee < $snpLeast){
-			showmessage('每次最少充值'.$snpLeast.'元', $backUrl);
+			showmessage(lang('plugin/yinxingfei_recharge', 'lang04').$snpLeast.lang('plugin/yinxingfei_recharge', 'lang09'), $backUrl);
 		}
 		if($snpFee > $snpMost){
-			showmessage('每次最多充值'.$snpMost.'元', $backUrl);
+			showmessage(lang('plugin/yinxingfei_recharge', 'lang05').$snpMost.lang('plugin/yinxingfei_recharge', 'lang09'), $backUrl);
 		}
 		$fee = $snpFee*100;
 		$snpNum = $snpFee*$snpRatio;
-		$subject = '用户'.$_G['username'].'积分充值-'.$snpFee*$snpRatio.$creditTitle;
+		$subject = lang('plugin/yinxingfei_recharge', 'lang06').$_G['username'].lang('plugin/yinxingfei_recharge', 'lang01').'-'.$snpFee*$snpRatio.$creditTitle;
 	}
 	$optional = [
 		'type' => $set['type'],
@@ -107,7 +107,7 @@ if(submitcheck('snpSubmit', 1)) {
 	}else{
 		$array = [
 			'code' => 0,
-			'data' => '写入数据库失败',
+			'data' => lang('plugin/yinxingfei_recharge', 'lang08'),
 		];
 		echo json_encode($array);
 		exit();
@@ -118,7 +118,7 @@ if(submitcheck('snpSubmit', 1)) {
     $onlyone = '';
     for($i = 1; $i <= 8; $i++) {
         if($extcredits[$i]['open']){
-            $li_html .= "<li extcredits-value=\"{$i}\" ratio-value=\"{$extcredits[$i]['ratio']}\" least-value=\"{$extcredits[$i]['least']}\" most-value=\"{$extcredits[$i]['most']}\" title-value=\"{$extcredits_list[$i]['title']}\">{$extcredits[$i]['ratio']}{$extcredits_list[$i]['title']} / 元</li>";
+            $li_html .= "<li extcredits-value=\"{$i}\" ratio-value=\"{$extcredits[$i]['ratio']}\" least-value=\"{$extcredits[$i]['least']}\" most-value=\"{$extcredits[$i]['most']}\" title-value=\"{$extcredits_list[$i]['title']}\">{$extcredits[$i]['ratio']}{$extcredits_list[$i]['title']} / {lang('plugin/yinxingfei_recharge', 'lang09')}</li>";
             $extcreditsCount++;
             $onlyone = $i;
         }

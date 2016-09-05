@@ -7,6 +7,10 @@
  *      www.suinipai.com
  */
 
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
+
 	include  template("common/header");
 ?>
 
@@ -38,21 +42,21 @@
 			<div class="snp-box-main-top">
 				<div class="snp-box-main-title-step1">
 					<i class="iconfont">&#xe662;</i>
-					<span>选择积分</span>
+					<span><?php echo lang('plugin/yinxingfei_recharge', 'lang10');?></span>
 				</div>
 				<div class="snp-box-main-title-line">
 					<i></i>
 				</div>
 				<div class="snp-box-main-title-step2">
 					<i class="iconfont">&#xe63a;</i>
-					<span>支付订单</span>
+					<span><?php echo lang('plugin/yinxingfei_recharge', 'lang07');?></span>
 				</div>
 				<div class="snp-box-main-title-line">
 					<i></i>
 				</div>
 				<div class="snp-box-main-title-step3">
 					<i class="iconfont">&#xe654;</i>
-					<span>积分到账</span>
+					<span><?php echo lang('plugin/yinxingfei_recharge', 'lang11');?></span>
 				</div>
 			</div>
 			<div class="tpay-notice"<?php if($extcreditsCount == 1){?>style="padding-bottom:10px;"<?php };?>>
@@ -72,12 +76,12 @@
 			<div class="snp-box-main-input">
 				<div class="snp-select <?php if($extcreditsCount == 1){ ?>snp-only-one<?php }?>" name="snp-select">
 					<?php if($extcreditsCount == 1){?>
-						<span>温馨提示：<?php echo $extcredits[$onlyone]['ratio'].$extcredits_list[$onlyone]['title'];?> / 元</span>
+						<span><?php echo lang('plugin/yinxingfei_recharge', 'lang12');?><?php echo $extcredits[$onlyone]['ratio'].$extcredits_list[$onlyone]['title'];?> / <?php echo lang('plugin/yinxingfei_recharge', 'lang09');?></span>
 						<ul>
 							<?php echo $li_html;?>
 						</ul>
 					<?php }else{?>
-						<a href="javascript:;" class="snp-select-a"><font color=#a9a9a9>选择充值积分</font></a>
+						<a href="javascript:;" class="snp-select-a"><font color=#a9a9a9><?php echo lang('plugin/yinxingfei_recharge', 'lang13');?></font></a>
 						<ul>
 							<?php echo $li_html;?>
 						</ul>
@@ -85,17 +89,17 @@
 				</div>
 				<div class="snp-form-group">
 					<?php if ($set['type'] == 1){?>
-						<input type="text" name="snpNum" class="snp-input" placeholder="输入充值积分数量" />
+						<input type="text" name="snpNum" class="snp-input" placeholder="<?php echo lang('plugin/yinxingfei_recharge', 'lang14');?>" />
 					<?php }else{?>
-						<input type="text" name="snpFee" class="snp-input" placeholder="输入充值金额" />
+						<input type="text" name="snpFee" class="snp-input" placeholder="<?php echo lang('plugin/yinxingfei_recharge', 'lang15');?>" />
 					<?php }?>
 				</div>
 				<div>
-					<p class="spn-help-block" id="snp-tip" style="display:none;">等待计算</p>
+					<p class="spn-help-block" id="snp-tip" style="display:none;"><?php echo lang('plugin/yinxingfei_recharge', 'lang16');?></p>
 				</div>
 			</div>
 			<div>
-				<button type="submit" id="go-pay" class="go-pay-btn">提交订单</button>
+				<button type="submit" id="go-pay" class="go-pay-btn"><?php echo lang('plugin/yinxingfei_recharge', 'lang17');?></button>
 			</div>
 		</div>
 		<span style="display: none" id="return_pay_form"></span>
