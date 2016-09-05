@@ -19,19 +19,19 @@ if(!submitcheck('settingsubmit')) {
     $set = $_G['cache']['plugin']['yinxingfei_recharge'];
 	$extcredits = $_G['setting']['extcredits'];
 	showformheader('plugins&operation=config&do='.$pluginid.'&identifier=yinxingfei_recharge&pmod=extcredits', 'enctype');
-	showtableheader('充值比例', 'fixpadding');
+	showtableheader(lang('plugin/yinxingfei_recharge', 'lang35'), 'fixpadding');
 	$title = $creditsetting = array();
 	for($i = 1; $i <= 8; $i++) {
 		if($i == 1) {
-			$title[] = '<font style="font:12px normal normal">积分名称</font>';
-			$creditsetting[0] = '<td class="td23">是否开启充值</td>';
-			$creditsetting[1] = '<td class="td23">1元=？积分</td>';
+			$title[] = '<font style="font:12px normal normal">'.lang('plugin/yinxingfei_recharge', 'lang36').'</font>';
+			$creditsetting[0] = '<td class="td23">'.lang('plugin/yinxingfei_recharge', 'lang37').'</td>';
+			$creditsetting[1] = '<td class="td23">'.lang('plugin/yinxingfei_recharge', 'lang38').'</td>';
 			if($set['type'] == 1){
-				$creditsetting[2] = '<td class="td23">单次最少充值<font color=red>(数量)</font></td>';
-				$creditsetting[3] = '<td class="td23">单次最多充值<font color=red>(数量)</font></td>';
+				$creditsetting[2] = '<td class="td23">'.lang('plugin/yinxingfei_recharge', 'lang39').'<font color=red>('.lang('plugin/yinxingfei_recharge', 'lang41').')</font></td>';
+				$creditsetting[3] = '<td class="td23">'.lang('plugin/yinxingfei_recharge', 'lang40').'<font color=red>('.lang('plugin/yinxingfei_recharge', 'lang41').')</font></td>';
 			}else{
-				$creditsetting[2] = '<td class="td23">单次最少充值<font color=red>(元)</font></td>';
-				$creditsetting[3] = '<td class="td23">单次最多充值<font color=red>(元)</font></td>';
+				$creditsetting[2] = '<td class="td23">'.lang('plugin/yinxingfei_recharge', 'lang39').'<font color=red>('.lang('plugin/yinxingfei_recharge', 'lang09').')</font></td>';
+				$creditsetting[3] = '<td class="td23">'.lang('plugin/yinxingfei_recharge', 'lang40').'<font color=red>('.lang('plugin/yinxingfei_recharge', 'lang09').')</font></td>';
 			}
 		}
 		
@@ -42,7 +42,7 @@ if(!submitcheck('settingsubmit')) {
 			$creditsetting[2] .= "<td class=\"td32\"><input type=\"text\" class=\"txt\" name=\"extcredits[$i][least]\" value=\"{$_G['cache']['yinxingfei_recharge'][$i]['least']}\"></td>";
 			$creditsetting[3] .= "<td class=\"td32\"><input type=\"text\" class=\"txt\" name=\"extcredits[$i][most]\" value=\"{$_G['cache']['yinxingfei_recharge'][$i]['most']}\"></td>";
 		}else{
-			$title[] = "该积分未启用</br>extcredits$i";
+			$title[] = lang('plugin/yinxingfei_recharge', 'lang42')."</br>extcredits$i";
 			$creditsetting[0] .= "<td class=\"td32\">-</td>";
 			$creditsetting[1] .= "<td class=\"td32\">-</td>";
 			$creditsetting[2] .= "<td class=\"td32\">-</td>";
@@ -56,6 +56,6 @@ if(!submitcheck('settingsubmit')) {
 	showformfooter();
 }else{
 	save_syscache('yinxingfei_recharge', $_POST['extcredits']);
-	cpmsg('设置保存成功', 'action=plugins&operation=config&do='.$pluginid.'&identifier=yinxingfei_recharge&pmod=extcredits', 'succeed');
+	cpmsg(lang('plugin/yinxingfei_recharge', 'lang43'), 'action=plugins&operation=config&do='.$pluginid.'&identifier=yinxingfei_recharge&pmod=extcredits', 'succeed');
 }
 ?>

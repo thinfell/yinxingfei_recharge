@@ -7,8 +7,8 @@
  *      www.suinipai.com
  */
 
-require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/alipay_notify.class.php");
-require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/weixin/Weixin.class.php");
+require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/alipay/Alipay.class.php");
+require_once(DISCUZ_ROOT."source/plugin/yinxingfei_recharge/weixin/WeiXin.class.php");
 
 class Notify
 {
@@ -65,10 +65,9 @@ class Notify
         $alipay_config['partner']		= $_G['cache']['plugin']['yinxingfei_recharge']['ec_partner'];
         $alipay_config['key']			= $_G['cache']['plugin']['yinxingfei_recharge']['ec_securitycode'];
         $alipay_config['sign_type']    = strtoupper('MD5');
-        $alipay_config['cacert']    = getcwd().'\\..\\alipay\\cacert.pem';
         $alipay_config['transport']    = 'http';
 
-        $alipayNotify = new AlipayNotify($alipay_config);
+        $alipayNotify = new Alipay($alipay_config);
         $verify_result = $alipayNotify->verifyNotify();
         if($verify_result) {
             $out_trade_no = $_POST['out_trade_no'];
@@ -122,11 +121,6 @@ class Notify
         $notify = $Weixin->FromXml($xml);
         $key = $_G['cache']['plugin']['yinxingfei_recharge']['ec_wxpay_key'];
 
-		$myfile = fopen("log.txt", "w") or die("Unable to open file!");
-		$txt = json_encode($notify);
-		fwrite($myfile, $txt);
-		fclose($myfile);
-		
         if($notify['sign'] == $Weixin->MakeSign($notify,$key)){
             if($notify['result_code'] == 'SUCCESS') {
                 $out_trade_no = $notify['out_trade_no'];

@@ -2,7 +2,7 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.2]]></item>
-	<item id="Time"><![CDATA[2016-09-03 21:35]]></item>
+	<item id="Time"><![CDATA[2016-09-05 17:34]]></item>
 	<item id="From"><![CDATA[Discuz! Board (http://dz.com/)]]></item>
 	<item id="Data">
 		<item id="plugin">
@@ -14,7 +14,7 @@
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[yinxingfei_recharge/]]></item>
 			<item id="copyright"><![CDATA[www.suinipai.com]]></item>
-			<item id="version"><![CDATA[1.0]]></item>
+			<item id="version"><![CDATA[1.1]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[index]]></item>
@@ -92,9 +92,7 @@
 			<item id="3">
 				<item id="displayorder"><![CDATA[4]]></item>
 				<item id="title"><![CDATA[免签商户账号]]></item>
-				<item id="description"><![CDATA[免签注册地址：http://www.suinipai.com
-商户后台：http://admin.suinipai.com
-开发文档：http://www.suinipai.com/docs]]></item>
+				<item id="description"><![CDATA[免签注册请联系QQ：15556666551]]></item>
 				<item id="variable"><![CDATA[partner]]></item>
 				<item id="type"><![CDATA[text]]></item>
 				<item id="value"><![CDATA[2051396332]]></item>
@@ -184,13 +182,49 @@
 		</item>
 		<item id="language">
 			<item id="scriptlang">
-				<item id="lang01"><![CDATA[]]></item>
-			</item>
-			<item id="templatelang">
-				<item id="lang01"><![CDATA[]]></item>
-			</item>
-			<item id="installlang">
-				<item id="lang01"><![CDATA[]]></item>
+				<item id="lang01"><![CDATA[积分充值]]></item>
+				<item id="lang02"><![CDATA[管理员未开启任何支付模式，请联系管理员!]]></item>
+				<item id="lang03"><![CDATA[选择充值积分]]></item>
+				<item id="lang04"><![CDATA[每次最少充值]]></item>
+				<item id="lang05"><![CDATA[每次最多充值]]></item>
+				<item id="lang06"><![CDATA[用户]]></item>
+				<item id="lang07"><![CDATA[支付订单]]></item>
+				<item id="lang08"><![CDATA[写入数据库失败]]></item>
+				<item id="lang09"><![CDATA[元]]></item>
+				<item id="lang10"><![CDATA[选择积分]]></item>
+				<item id="lang11"><![CDATA[积分到账]]></item>
+				<item id="lang12"><![CDATA[温馨提示：]]></item>
+				<item id="lang13"><![CDATA[选择充值积分]]></item>
+				<item id="lang14"><![CDATA[输入充值积分数量]]></item>
+				<item id="lang15"><![CDATA[输入充值金额]]></item>
+				<item id="lang16"><![CDATA[等待计算]]></item>
+				<item id="lang17"><![CDATA[提交订单]]></item>
+				<item id="lang18"><![CDATA[未支付]]></item>
+				<item id="lang19"><![CDATA[支付成功]]></item>
+				<item id="lang31"><![CDATA[取消]]></item>
+				<item id="lang20"><![CDATA[补单成功]]></item>
+				<item id="lang21"><![CDATA[积分充值记录]]></item>
+				<item id="lang22"><![CDATA[订单号]]></item>
+				<item id="lang23"><![CDATA[订单详情]]></item>
+				<item id="lang24"><![CDATA[支付金额]]></item>
+				<item id="lang25"><![CDATA[提交时间]]></item>
+				<item id="lang26"><![CDATA[完结时间]]></item>
+				<item id="lang27"><![CDATA[状态]]></item>
+				<item id="lang28"><![CDATA[操作]]></item>
+				<item id="lang29"><![CDATA[补单]]></item>
+				<item id="lang30"><![CDATA[订单号：]]></item>
+				<item id="lang32"><![CDATA[查看积分]]></item>
+				<item id="lang33"><![CDATA[支付成功，还想继续充值？]]></item>
+				<item id="lang34"><![CDATA[返回首页]]></item>
+				<item id="lang35"><![CDATA[充值比例]]></item>
+				<item id="lang36"><![CDATA[积分名称]]></item>
+				<item id="lang37"><![CDATA[是否开启充值]]></item>
+				<item id="lang38"><![CDATA[1元=？积分]]></item>
+				<item id="lang39"><![CDATA[单次最少充值]]></item>
+				<item id="lang40"><![CDATA[单次最多充值]]></item>
+				<item id="lang41"><![CDATA[数量]]></item>
+				<item id="lang42"><![CDATA[该积分未启用]]></item>
+				<item id="lang43"><![CDATA[设置保存成功]]></item>
 			</item>
 		</item>
 		<item id="installfile"><![CDATA[install.php]]></item>
