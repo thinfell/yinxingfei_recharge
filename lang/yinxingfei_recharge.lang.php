@@ -43,5 +43,8 @@ $scriptlang['yinxingfei_recharge'] = array(
     'lang41' => '数量',
     'lang42' => '该积分未启用',
     'lang43' => '设置保存成功',
+    'lang44' => '充值：',
+    'lang45' => '，需要：',
+    'lang46' => '，可获得：',
 );
 ?>
