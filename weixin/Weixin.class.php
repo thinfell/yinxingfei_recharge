@@ -67,10 +67,10 @@ class WeiXin
                 );
             }
         }else{
-            $return = [
+            $return = array(
                 'code' => 0,
                 'message' => $result["return_msg"],
-            ];
+            );
         }
         return $return;
     }

@@ -42,16 +42,16 @@ class Recharge {
                     $result = $this->exemptSign();
                     break;
                 default :
-                    $result = [
+                    $result = array(
                         'code' => 0,
                         'message' => 'signtype error',
-                    ];
+                    );
             }
         }else{
-            $result = [
+            $result = array(
                 'code' => 0,
                 'message' => $checkResult,
-            ];
+            );
         }
         return $result;
     }
@@ -85,10 +85,10 @@ class Recharge {
                 $result = $this->buildWeixin();
                 break;
             default :
-                $result = [
+                $result = array(
                     'code' => 0,
                     'message' => 'PayType error',
-                ];
+                );
         }
         return $result;
     }
@@ -152,23 +152,23 @@ class Recharge {
 
 EOF;
 
-                $return = [
+                $return = array(
                     'code' => 200,
                     'user_agent' => $this->para['user_agent'],
                     'javascript' => $javascript,
                     'img' => $result_data->message,
-                ];
+                );
             }else{
-                $return = [
+                $return = array(
                     'user_agent' => $this->para['user_agent'],
                     'html' => $result_data->message,
-                ];
+                );
             }
         }else{
-            $return = [
+            $return = array(
                 'code' => 0,
                 'message' => $result_data->message,
-            ];
+            );
         }
         return $return;
     }
@@ -219,18 +219,18 @@ EOF;
 
 EOF;
 
-                $return = [
+                $return = array(
                     'code' => 200,
                     'user_agent' => $this->para['user_agent'],
                     'javascript' => $javascript,
                     'img' => $result_data['message'],
-                ];
+                );
             }
         }else{
-            $return = [
+            $return = array(
                 'code' => 0,
                 'message' => $result_data['message'],
-            ];
+            );
         }
         return $return;
     }
@@ -283,11 +283,11 @@ EOF;
 
         $alipaySubmit = new Alipay($alipay_config);
         $html_text = $alipaySubmit->buildRequestForm($parameter);
-        $return = [
+        $return = array(
             'code' => 200,
             'user_agent' => $user_agent,
             'html' => $html_text,
-        ];
+        );
         return $return;
 	}
 

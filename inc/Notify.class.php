@@ -154,10 +154,10 @@ class Notify
                     'value' => $_G['setting']['extcredits'][$optional['snpExtcredits']]['title'].' '.$snpNum.' '.$_G['setting']['extcredits'][$optional['snpExtcredits']]['unit']
                 ), 1);
 
-                return  $Weixin->ToXml([
+                return  $Weixin->ToXml(array(
                     'code' => 'SUCCESS',
                     'msg' => 'OK',
-                ]);
+                ));
 
             }else{
                 return "";

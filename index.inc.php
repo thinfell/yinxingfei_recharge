@@ -66,7 +66,7 @@ if(submitcheck('snpSubmit', 1)) {
 		$snpNum = $snpFee*$snpRatio;
 		$subject = lang('plugin/yinxingfei_recharge', 'lang06').$_G['username'].lang('plugin/yinxingfei_recharge', 'lang01').'-'.$snpFee*$snpRatio.$creditTitle;
 	}
-	$optional = [
+	$optional = array(
 		'type' => $set['type'],
 		'snpExtcredits' => $snpExtcredits,
 		'snpFee' => $snpFee,
@@ -76,7 +76,7 @@ if(submitcheck('snpSubmit', 1)) {
 		'most' => $snpMost,
 		'fee' => $fee,
 		'subject' => $subject,
-	];
+    );
 
 	//创建订单
 	$id = date("Ymd",time()).microtime_float();
@@ -92,23 +92,23 @@ if(submitcheck('snpSubmit', 1)) {
 	);
 	if(DB::insert('a_yinxingfei_recharge_order', $dbpost)){
     //if(1){
-		$array = [
+		$array = array(
 			'code' => 200,
-			'data' => [
+			'data' => array(
 				'actionUrl' => $_G['siteurl'].'plugin.php?id=yinxingfei_recharge:operation',
 				'subject' => $subject,
 				'out_trade_no' => $id,
 				'fee' => ''.$fee.'',
 				'optional' => json_encode($optional),
-			],
-		];
+            ),
+        );
 		echo json_encode($array);
 		exit();
 	}else{
-		$array = [
+		$array = array(
 			'code' => 0,
 			'data' => lang('plugin/yinxingfei_recharge', 'lang08'),
-		];
+        );
 		echo json_encode($array);
 		exit();
 	}
