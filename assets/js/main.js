@@ -15,14 +15,14 @@
 		inputValue = jq(".snp-input").val();
 		inputValue = parseInt(inputValue);
 		if (extcreditsValue == 0) {
-			alert(inputValue+snpLang['lang03']);
+			alert(snpLang.lang03);
 			return false;
 		}else if (isNaN(inputValue)) {
 			inputValue = leastValue;
 			if(snpType == 1){
-				alert(inputValue+snpLang['lang14']);
+				alert(snpLang.lang14);
 			}else{
-				alert(inputValue+snpLang['lang15']);
+				alert(snpLang.lang15);
 			}
 			return false;
 		}else{
@@ -73,7 +73,7 @@
 	});
 	jq(".snp-input").keydown(function(){
 		if (extcreditsValue == 0) {
-			alert(inputValue+snpLang['lang03']);
+			alert(snpLang.lang03);
 			return false;
 		}
 	});
@@ -109,9 +109,9 @@
 			return false;
 		}else if(inputValue < leastValue){
 			if(snpType == 1){
-				alert(inputValue+snpLang['lang04']+leastValue+titleValue);
+				alert(snpLang.lang04+leastValue+titleValue);
 			}else{
-				alert(inputValue+snpLang['lang04']+leastValue+snpLang['lang09']);
+				alert(snpLang.lang04+leastValue+snpLang.lang09);
 			}
 			inputValue = leastValue;
 			jq(".snp-input").val(inputValue);
@@ -119,9 +119,9 @@
 			return false;
 		}else if(inputValue > mostValue){
 			if(snpType == 1){
-				alert(inputValue+snpLang['lang05']+mostValue+titleValue);
+				alert(snpLang.lang05+mostValue+titleValue);
 			}else{
-				alert(inputValue+snpLang['lang05']+mostValue+snpLang['lang09']);
+				alert(snpLang.lang05+mostValue+snpLang.lang09);
 			}
 			inputValue = mostValue;
 			jq(".snp-input").val(inputValue);
@@ -142,9 +142,9 @@
 				totalValue = 0.01
 			}
 			totalValue = totalValue.toFixed(2);
-			jq('#snp-tip').html(inputValue+snpLang['lang44']+inputValue+titleValue+inputValue+snpLang['lang45']+totalValue+snpLang['lang09']);
+			jq('#snp-tip').html(snpLang.lang44+inputValue+titleValue+snpLang.lang45+totalValue+snpLang.lang09);
 		}else{
-			jq('#snp-tip').html(inputValue+snpLang['lang44']+inputValue+snpLang['lang09']+inputValue+snpLang['lang46']+(inputValue*ratioValue)+titleValue);
+			jq('#snp-tip').html(snpLang.lang44+inputValue+snpLang.lang09+snpLang.lang46+(inputValue*ratioValue)+titleValue);
 		}
 
 		if(extcreditsValue == 0 || isNaN(inputValue)){
