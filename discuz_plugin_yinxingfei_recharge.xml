@@ -2,8 +2,8 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.2]]></item>
-	<item id="Time"><![CDATA[2016-09-05 22:41]]></item>
-	<item id="From"><![CDATA[thinfellPay (http://pay.thinfell.com/)]]></item>
+	<item id="Time"><![CDATA[2016-09-06 15:09]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://dz.com/)]]></item>
 	<item id="Data">
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
@@ -14,7 +14,7 @@
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[yinxingfei_recharge/]]></item>
 			<item id="copyright"><![CDATA[www.suinipai.com]]></item>
-			<item id="version"><![CDATA[1.2]]></item>
+			<item id="version"><![CDATA[1.3]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[index]]></item>
@@ -225,6 +225,9 @@
 				<item id="lang41"><![CDATA[数量]]></item>
 				<item id="lang42"><![CDATA[该积分未启用]]></item>
 				<item id="lang43"><![CDATA[设置保存成功]]></item>
+				<item id="lang44"><![CDATA[充值：]]></item>
+				<item id="lang45"><![CDATA[，需要：]]></item>
+				<item id="lang46"><![CDATA[，可获得：]]></item>
 			</item>
 		</item>
 		<item id="installfile"><![CDATA[install.php]]></item>
