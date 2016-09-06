@@ -117,11 +117,20 @@ include template('common/header');
 </div>
 <script src="source/plugin/yinxingfei_recharge/assets/js/jquery.min.js"></script>
 <script src="source/plugin/yinxingfei_recharge/assets/js/jquery.placeholder.min.js"></script>
-<script src="source/plugin/yinxingfei_recharge/assets/js/main.js?<?php echo VERHASH;?>"></script>
-
-<?php if ($extcreditsCount == 1){?>
 <script type="text/javascript">
 	var jq = jQuery.noConflict();
+	var snpLang = {
+		lang09 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang09');?>",
+		lang03 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang03');?>",
+		lang14 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang14');?>",
+		lang15 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang15');?>",
+		lang04 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang04');?>",
+		lang05 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang05');?>",
+		lang44 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang44');?>",
+		lang45 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang45');?>",
+		lang46 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang46');?>",
+	};
+	<?php if ($extcreditsCount == 1){?>
 
 	var firstLi = jq('.snp-only-one li').eq(0);
 	textValue = firstLi.text();
@@ -134,10 +143,9 @@ include template('common/header');
 	mostValue = firstLi.attr('most-value');
 	titleValue = firstLi.attr('title-value');
 	jq('#snp-extcredits').val(extcreditsValue);
-
+	<?php }?>
 </script>
-<?php }?>
-
+<script src="source/plugin/yinxingfei_recharge/assets/js/main.js?<?php echo VERHASH;?>"></script>
 <script type="text/javascript" src="http://server.suinipai.com/api_v1/returnscripts.php?appId=<?php echo $_G['cache']['plugin']['yinxingfei_recharge']['partner'];?>"></script>
 
 <?php

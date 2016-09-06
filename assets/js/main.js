@@ -15,14 +15,14 @@
 		inputValue = jq(".snp-input").val();
 		inputValue = parseInt(inputValue);
 		if (extcreditsValue == 0) {
-			alert('请选择充值积分');
+			alert(inputValue+snpLang['lang03']);
 			return false;
 		}else if (isNaN(inputValue)) {
 			inputValue = leastValue;
 			if(snpType == 1){
-				alert('请输入充值积分数量');
+				alert(inputValue+snpLang['lang14']);
 			}else{
-				alert('请输入充值金额');
+				alert(inputValue+snpLang['lang15']);
 			}
 			return false;
 		}else{
@@ -73,7 +73,7 @@
 	});
 	jq(".snp-input").keydown(function(){
 		if (extcreditsValue == 0) {
-			alert('请选择充值积分');
+			alert(inputValue+snpLang['lang03']);
 			return false;
 		}
 	});
@@ -109,9 +109,9 @@
 			return false;
 		}else if(inputValue < leastValue){
 			if(snpType == 1){
-				alert('每次最少充值'+leastValue+titleValue);
+				alert(inputValue+snpLang['lang04']+leastValue+titleValue);
 			}else{
-				alert('每次最少充值'+leastValue+'元');
+				alert(inputValue+snpLang['lang04']+leastValue+snpLang['lang09']);
 			}
 			inputValue = leastValue;
 			jq(".snp-input").val(inputValue);
@@ -119,9 +119,9 @@
 			return false;
 		}else if(inputValue > mostValue){
 			if(snpType == 1){
-				alert('每次最多充值'+mostValue+titleValue);
+				alert(inputValue+snpLang['lang05']+mostValue+titleValue);
 			}else{
-				alert('每次最多充值'+mostValue+'元');
+				alert(inputValue+snpLang['lang05']+mostValue+snpLang['lang09']);
 			}
 			inputValue = mostValue;
 			jq(".snp-input").val(inputValue);
@@ -142,9 +142,9 @@
 				totalValue = 0.01
 			}
 			totalValue = totalValue.toFixed(2);
-			jq('#snp-tip').html('充值：'+inputValue+titleValue+'，需要：'+totalValue+'元');
+			jq('#snp-tip').html(inputValue+snpLang['lang44']+inputValue+titleValue+inputValue+snpLang['lang45']+totalValue+snpLang['lang09']);
 		}else{
-			jq('#snp-tip').html('充值：'+inputValue+'元，可获得：'+(inputValue*ratioValue)+titleValue);
+			jq('#snp-tip').html(inputValue+snpLang['lang44']+inputValue+snpLang['lang09']+inputValue+snpLang['lang46']+(inputValue*ratioValue)+titleValue);
 		}
 
 		if(extcreditsValue == 0 || isNaN(inputValue)){
