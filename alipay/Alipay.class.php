@@ -74,9 +74,25 @@ class Alipay
         return $mysign;
     }
 
+    private function charsetEncode($input,$_output_charset ,$_input_charset) {
+        $output = "";
+        if(!isset($_output_charset) )$_output_charset  = $_input_charset;
+        if($_input_charset == $_output_charset || $input ==null ) {
+            $output = $input;
+        } elseif (function_exists("mb_convert_encoding")) {
+            $output = mb_convert_encoding($input,$_output_charset,$_input_charset);
+        } elseif(function_exists("iconv")) {
+            $output = iconv($_input_charset,$_output_charset,$input);
+        } else die("sorry, you have no libs support for charset change.");
+        return $output;
+    }
+
     private function createLinkstring($para) {
         $arg  = "";
         while (list ($key, $val) = each ($para)) {
+            if($key == 'subject'){
+                $val = $this->charsetEncode($val, CHARSET, 'UTF-8');
+            }
             $arg.=$key."=".$val."&";
         }
         //去掉最后一个&字符
