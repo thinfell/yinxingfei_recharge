@@ -15,7 +15,6 @@ class Recharge {
     private $para;
     private $api_gateway = 'http://server.suinipai.com/v1';
     private $api_check = 'http://server.suinipai.com/v1/verification';
-    private $back_notify_url = 'plugin.php?id=yinxingfei_recharge:notify_url';
     private $back_return_url = 'plugin.php?id=yinxingfei_recharge:return_url';
     private $weixin_check_url = 'plugin.php?id=yinxingfei_recharge:weixin_check';
 
@@ -113,6 +112,7 @@ class Recharge {
             'partner' => $_G['cache']['plugin']['yinxingfei_recharge']['partner'],
             'timestamp' => $timestamp,
             'sign' => $sign,
+            'charset' => CHARSET,
         );
 
         $post_data = array_merge($post_base, $post_order);
@@ -159,7 +159,9 @@ EOF;
                     'img' => $result_data->message,
                 );
             }else{
+                //$result_data->message = diconv($result_data->message, 'UTF-8', CHARSET);
                 $return = array(
+                    'code' => 200,
                     'user_agent' => $this->para['user_agent'],
                     'html' => $result_data->message,
                 );
@@ -249,7 +251,7 @@ EOF;
         $alipay_config['notify_url'] = $_G['siteurl'].'source/plugin/yinxingfei_recharge/notify_url.inc.php';
         $alipay_config['return_url'] = $alipay_config['notify_url'];
         $alipay_config['sign_type']    = strtoupper('MD5');
-        $alipay_config['input_charset']= strtolower('utf-8');
+        $alipay_config['input_charset']= CHARSET;
         $alipay_config['transport']    = 'http';
         $alipay_config['payment_type'] = "1";
         if($user_agent != 'pc'){
