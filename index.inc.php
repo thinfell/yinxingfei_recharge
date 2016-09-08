@@ -29,17 +29,16 @@ if(!$set['signtype'] &&  !$set['alipay_open'] && !$set['weixin_open']){
 if(submitcheck('snpSubmit', 1)) {
 	$snpExtcredits = intval($_POST['snpExtcredits']);
     $backUrl = 'plugin.php?id=yinxingfei_recharge:index';
+    $snpLeast = $extcredits[$snpExtcredits]['least'];
+    $snpMost = $extcredits[$snpExtcredits]['most'];
+    $snpRatio = $extcredits[$snpExtcredits]['ratio'];
+    $creditTitle = $extcredits_list[$snpExtcredits]['title'];
+
 	if($snpExtcredits < 1 ){
 		showmessage(lang('plugin/yinxingfei_recharge', 'lang03'), $backUrl);
 	}
 	if($set['type'] == 1){
 		$snpNum = intval($_POST['snpNum']);
-        $snpLeast = $extcredits[$snpExtcredits]['least'];
-        $snpMost = $extcredits[$snpExtcredits]['most'];
-        $snpRatio = $extcredits[$snpExtcredits]['ratio'];
-
-        $creditTitle = $extcredits_list[$snpExtcredits]['title'];
-
         if($snpNum < $snpLeast){
 			showmessage(lang('plugin/yinxingfei_recharge', 'lang04').$snpLeast.$creditTitle, $backUrl);
 		}
@@ -92,14 +91,26 @@ if(submitcheck('snpSubmit', 1)) {
 	);
 	if(DB::insert('a_yinxingfei_recharge_order', $dbpost)){
     //if(1){
+        $utf8_subject = diconv($subject, CHARSET, 'UTF-8');
+        $utf8_optional = array(
+            'type' => $set['type'],
+            'snpExtcredits' => $snpExtcredits,
+            'snpFee' => $snpFee,
+            'snpNum' => $snpNum,
+            'ratio' => $snpRatio,
+            'least' => $snpLeast,
+            'most' => $snpMost,
+            'fee' => $fee,
+            'subject' => $utf8_subject,
+        );
 		$array = array(
 			'code' => 200,
 			'data' => array(
 				'actionUrl' => $_G['siteurl'].'plugin.php?id=yinxingfei_recharge:operation',
-				'subject' => $subject,
+				'subject' => $utf8_subject,
 				'out_trade_no' => $id,
 				'fee' => ''.$fee.'',
-				'optional' => json_encode($optional),
+				'optional' => json_encode($utf8_optional),
             ),
         );
 		echo json_encode($array);
