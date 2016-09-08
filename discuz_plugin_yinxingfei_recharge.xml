@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.2]]></item>
-	<item id="Time"><![CDATA[2016-09-06 20:56]]></item>
-	<item id="From"><![CDATA[Discuz! Board (http://localhost/)]]></item>
+	<item id="Time"><![CDATA[2016-09-09 00:44]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://dzgbk.com/)]]></item>
 	<item id="Data">
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
@@ -14,7 +14,7 @@
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[yinxingfei_recharge/]]></item>
 			<item id="copyright"><![CDATA[www.suinipai.com]]></item>
-			<item id="version"><![CDATA[1.5]]></item>
+			<item id="version"><![CDATA[1.6]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[index]]></item>
