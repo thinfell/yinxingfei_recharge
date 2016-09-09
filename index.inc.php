@@ -126,7 +126,7 @@ if(submitcheck('snpSubmit', 1)) {
 }else{
     $li_html = '';
     $extcreditsCount = 0;
-    $onlyone = '';
+    $onlyone = 0;
     $snplang09 = lang('plugin/yinxingfei_recharge', 'lang09');
     for($i = 1; $i <= 8; $i++) {
         if($extcredits[$i]['open']){

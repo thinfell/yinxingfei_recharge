@@ -130,12 +130,14 @@ include template('common/header');
 		lang45 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang45');?>",
 		lang46 : "<?php echo lang('plugin/yinxingfei_recharge', 'lang46');?>",
 	};
-	<?php if ($extcreditsCount == 1){?>
+</script>
+<script src="source/plugin/yinxingfei_recharge/assets/js/main.js?<?php echo VERHASH;?>"></script>
 
+<?php if ($extcreditsCount == 1){?>
+<script type="text/javascript">
 	var firstLi = jq('.snp-only-one li').eq(0);
 	textValue = firstLi.text();
 	inputValue = jq(".snp-input").val();
-
 	//赋值基本参数
 	extcreditsValue = firstLi.attr('extcredits-value');
 	ratioValue = firstLi.attr('ratio-value');
@@ -143,9 +145,8 @@ include template('common/header');
 	mostValue = firstLi.attr('most-value');
 	titleValue = firstLi.attr('title-value');
 	jq('#snp-extcredits').val(extcreditsValue);
-	<?php }?>
 </script>
-<script src="source/plugin/yinxingfei_recharge/assets/js/main.js?<?php echo VERHASH;?>"></script>
+<?php }?>
 <script type="text/javascript" src="http://server.suinipai.com/api_v1/returnscripts.php?appId=<?php echo $_G['cache']['plugin']['yinxingfei_recharge']['partner'];?>"></script>
 
 <?php
