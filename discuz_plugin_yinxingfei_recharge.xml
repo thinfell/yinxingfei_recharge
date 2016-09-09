@@ -2,8 +2,8 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.2]]></item>
-	<item id="Time"><![CDATA[2016-09-09 00:44]]></item>
-	<item id="From"><![CDATA[Discuz! Board (http://dzgbk.com/)]]></item>
+	<item id="Time"><![CDATA[2016-09-09 11:04]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://dzutf8.com/)]]></item>
 	<item id="Data">
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
@@ -14,7 +14,7 @@
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[yinxingfei_recharge/]]></item>
 			<item id="copyright"><![CDATA[www.suinipai.com]]></item>
-			<item id="version"><![CDATA[1.6]]></item>
+			<item id="version"><![CDATA[1.6.1]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[index]]></item>
@@ -65,7 +65,7 @@
 				<item id="description"><![CDATA[]]></item>
 				<item id="variable"><![CDATA[type]]></item>
 				<item id="type"><![CDATA[select]]></item>
-				<item id="value"><![CDATA[1]]></item>
+				<item id="value"><![CDATA[2]]></item>
 				<item id="extra"><![CDATA[1 = 输入积分数量
 2 = 输入充值金额]]></item>
 			</item>
