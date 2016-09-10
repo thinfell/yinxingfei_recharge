@@ -112,7 +112,6 @@ class Recharge {
             'partner' => $_G['cache']['plugin']['yinxingfei_recharge']['partner'],
             'timestamp' => $timestamp,
             'sign' => $sign,
-            'charset' => CHARSET,
         );
 
         $post_data = array_merge($post_base, $post_order);
